@@ -1,4 +1,5 @@
 <template>
+
   <div id="app">
     <!-- 顶部 -->
     <NavBar>
@@ -11,6 +12,13 @@
     <!-- 订单详情2.0 -->
     <Order_details></Order_details>
     <router-view></router-view>
+  <div id="app">
+    
+    <router-view/>
+  </div>
+</template>
+
+
   </div>
 </template>
 
@@ -46,4 +54,3 @@ html {
   }
 }
 </style>
-
