@@ -6,20 +6,18 @@ import Login from "@/views/login/Login"
 Vue.use(VueRouter)
 
 const routes = [
-<<<<<<< HEAD
-      {
-        path:'/service',
-        component:()=>import('./../components/service.vue')
-      },
-      {
-        path:'/reg',
-        component:()=>import('./../views/Register.vue')
-      },
-      {
-        path:'/perinfo',
-        component:()=>import('./../components/perinfo.vue')
-      }
-=======
+   {
+      path: '/service',
+      component: () => import('./../components/service.vue')
+   },
+   {
+      path: '/reg',
+      component: () => import('./../views/Register.vue')
+   },
+   {
+      path: '/perinfo',
+      component: () => import('./../components/perinfo.vue')
+   },
    {
       path: '/',
       name: 'Login',
@@ -50,7 +48,6 @@ const routes = [
       name: 'Evaluate',
       component: () => import("@/views/home/detail/Evaluate")
    }
->>>>>>> 497c470... detail
 ]
 
 const router = new VueRouter({
