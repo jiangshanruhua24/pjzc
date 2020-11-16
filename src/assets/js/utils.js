@@ -2,7 +2,7 @@ let obj = {
     setRem() {
         // console.log(111)
         // 设计稿宽度和设备宽度
-        var uiW = 320,
+        var uiW = 750,
             winW = document.documentElement.clientWidth,
             // 定义比例
             rate = winW / uiW;
