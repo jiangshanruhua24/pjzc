@@ -1,8 +1,8 @@
 <template>
   <div id="login">
     <div class="logo">
-      <img src="../../assets/images/登录和注册_03.png" alt="" />
-      <img src="../../assets/images/登录和注册_07.png" alt="" />
+      <img src="@/assets/images/登录和注册_03.png" alt="" />
+      <img src="@/assets/images/登录和注册_07.png" alt="" />
     </div>
     <div class="user">
       <div><span>账号</span><input type="text" placeholder="请输入账号" /></div>
@@ -12,10 +12,10 @@
           :type="[isShow ? 'text' : 'password']"
           placeholder="请输入密码"
         />
-        <img src="../../assets/images/eye.png" alt="" @click="toggleClick" />
+        <img src="@/assets/images/eye.png" alt="" @click="toggleClick" />
         <img
           v-show="isShow"
-          src="../../assets/images/eye-active.png"
+          src="@/assets/images/eye-active.png"
           alt=""
           @click="toggleClick"
         />
@@ -27,7 +27,7 @@
         <span @click="registerClick">注册</span
         ><span @click="forgetClick">忘记密码</span>
       </p>
-      <img src="../../assets/images/登录和注册_11.png" alt="" />
+      <img src="@/assets/images/登录和注册_11.png" alt="" />
     </div>
   </div>
 </template>

@@ -4,7 +4,7 @@
       <li class="kong"></li>
       <li>
         <div class="left">
-          <img src="./../assets/imgs/bg2.jpg" alt />
+          <img src="@/assets/images/bg2.jpg" alt />
         </div>
         <div class="centet">
           <p>丰田汉兰达</p>
@@ -15,10 +15,10 @@
           <p>订单详情></p>
         </div>
       </li>
-  
-       <li>
+
+      <li>
         <div class="left">
-          <img src="./../assets/imgs/bg2.jpg" alt />
+          <img src="@/assets/images/bg2.jpg" alt />
         </div>
         <div class="centet">
           <p>丰田汉兰达</p>
@@ -68,7 +68,7 @@ html {
           width: 7.1rem;
           margin: 0 auto;
           border-radius: 0.08rem;
-          margin-bottom: .20rem;
+          margin-bottom: 0.2rem;
           .left {
             height: 100%;
             img {
@@ -100,7 +100,7 @@ html {
           .right {
             height: 1.3rem;
             margin-top: 0.24rem;
-            margin-right: .21rem;
+            margin-right: 0.21rem;
           }
         }
       }

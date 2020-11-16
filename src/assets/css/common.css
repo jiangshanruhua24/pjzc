@@ -22,6 +22,10 @@ body {
     background-color: #fff;
 }
 
+body {
+   font-size:.24rem;
+   color: #333; 
+}
 /* 去除iPhone中默认的input样式 */
 
 input {

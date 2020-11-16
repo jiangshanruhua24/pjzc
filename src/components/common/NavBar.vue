@@ -32,15 +32,17 @@ export default {
   height: 0.88rem;
   line-height: 0.88rem;
   text-align: center;
-  .left,
-  .right {
+  > .left,
+  > .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 0.6rem;
   }
   > .left {
     > .arrow-left {
       width: 0.22rem;
       height: 0.22rem;
-      margin-left: 0.24rem;
       display: inline-block;
       border-bottom: 2px solid #333;
       border-left: 2px solid #333;

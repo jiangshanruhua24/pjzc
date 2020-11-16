@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h6 @click="detailClick">详情页</h6>
+    <h1>首页</h1>
+    <button @click="detailClick">我要租车</button>
   </div>
 </template>
 
