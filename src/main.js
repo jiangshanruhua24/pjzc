@@ -28,7 +28,7 @@ new Vue({
       window.onresize = function () {
          obj.setRem();
       }
-      this.$router.push('/home');
+      this.$router.push('/detail');
    },
    router,
    store,

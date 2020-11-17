@@ -23,6 +23,7 @@
 <script>
 import NavBar from "@/components/common/NavBar";
 import Start from "@/components/common/Start";
+
 export default {
   props: {},
   data() {

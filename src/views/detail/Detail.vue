@@ -3,219 +3,177 @@
     <NavBar>
       <div slot="center">订单详情</div>
     </NavBar>
-    <div class="order_number">
-      <span>订单号：{{ message.order_number }}</span>
-      <span>下单日期：{{ formatDate }}</span>
-    </div>
-    <div class="car_message">
-      <h4>车辆信息</h4>
-      <div class="car_th">
-        <img src="" alt="" />
-        <div class="car_right">
-          <h3>丰田汉兰达</h3>
-          <div>
-            SUV
-            <div class="three"></div>
-            2.7自动
-            <div class="four"></div>
-            乘坐5人
-          </div>
+    <div class="detail_tb">
+      <!-- 车辆信息 -->
+      <div class="car_msg"><CarDetail></CarDetail></div>
+      <!-- 取车时间 -->
+      <div class="pick_car">
+        <div>
+          <p>
+            <span>取车时间：郑州</span>
+            <span>取车门店：金水路</span>
+          </p>
+          <p>
+            <span>还车时间：洛阳</span>
+            <span>还车门店：皇城公园店</span>
+          </p>
         </div>
+        <p>取车时间：01月24日 周四 15:30</p>
+        <p>还车时间：01月24日 周四 15:30</p>
+      </div>
+      <!-- 定金 -->
+      <div class="money">应付定金：<span>￥2000元</span></div>
+      <!-- 支付方式 -->
+      <van-radio-group
+        v-model="radio"
+        class="pay"
+        style="background-color: #eee"
+      >
+        <van-cell>
+          <div>
+            <img src="./images/wallet.png" alt="" />
+            账户余额
+          </div>
+          <van-radio name="1" icon-size="32" />
+        </van-cell>
+        <van-cell>
+          <div>
+            <img src="./images/alipay.png" alt="" />
+            支付宝
+          </div>
+          <van-radio name="2" icon-size="32" />
+        </van-cell>
+        <van-cell>
+          <div>
+            <img src="./images/wechat.png" alt="" />
+            微信
+          </div>
+          <van-radio name="3" icon-size="32" />
+        </van-cell>
+      </van-radio-group>
+      <div class="agree">
+        <van-checkbox v-model="checked" shape="square"
+          ><i>同意</i><span>《平价分时租车租贷协议》</span></van-checkbox
+        >
       </div>
     </div>
-    <div class="car_time">租车时长：<span>2</span>天</div>
-    <div class="price">
-      <ul>
-        <li>
-          <span>定金：{{ message.arr[0].moneny1 }}元</span>
-        </li>
-        <li>
-          <span>使用费：{{ message.arr[1].moneny2 }}元</span>
-        </li>
-        <li>
-          <span>基本保险：{{ message.arr[2].moneny3 }}元</span>
-        </li>
-        <li>
-          <span>手续费：{{ message.arr[3].moneny4 }}元</span>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <span>加油服务费：{{ message.arr[4].moneny5 }}元</span>
-        </li>
-        <li>
-          <span>油费：{{ message.arr[5].moneny6 }}元</span>
-        </li>
-        <li>
-          <span>车辆损失费：{{ message.arr[6].moneny7 }}元</span>
-        </li>
-      </ul>
-    </div>
-    <div class="total">
-      合计：<span>{{ total }}</span
-      >元
-    </div>
     <div class="btn">
-      <button>再次下单</button>
-      <button @click="reserve">预定/评价</button>
+      <van-button type="primary" size="large" color="#4395ff"
+        ><span>账户余额</span></van-button
+      >
     </div>
   </div>
 </template>
 
 <script>
 import NavBar from "@/components/common/NavBar";
-import { obj } from "@/assets/js/utils";
+
+import CarDetail from "@/components/content/CarDetail";
 
 export default {
   props: {},
   data() {
     return {
-      message: {
-        order_number: "0012011404082557",
-        time: 1605432101588,
-        arr: [
-          { moneny1: 2000 },
-          { moneny2: 600 },
-          { moneny3: 100 },
-          { moneny4: 30 },
-          { moneny5: 0 },
-          { moneny6: 0 },
-          { moneny7: 0 },
-        ],
-      },
+      radio: "",
+      checked: true,
     };
   },
-  computed: {
-    formatDate() {
-      return obj.formatTime(this.message.time);
-    },
-    total() {
-      let sum = 0;
-      for (let v of this.message.arr) {
-        let [item] = Object.values(v);
-        sum += item;
-      }
-      return sum;
-    },
-  },
-  mounted() {},
-  methods: {
-    reserve() {
-      this.$router.push("/evaluate");
-    },
-  },
-  components: {
-    NavBar,
-  },
+  methods: {},
+  components: { NavBar, CarDetail },
 };
 </script>
 
 <style scoped lang="less">
 #detail {
-  > .order_number {
-    display: flex;
-    justify-content: space-between;
-    height: 1rem;
-    line-height: 1rem;
-    padding: 0 0.29rem 0 0.38rem;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: #f2f2f2 0 2px 2px 2px inset;
-  }
-  > .car_message {
-    padding: 0.33rem 0 0.46rem 0.39rem;
-    border-bottom: 1px solid #e0e0e0;
-    > h4 {
-      font-size: 0.3rem;
-      color: #333;
-      font-weight: 600;
-      padding-bottom: 0.22rem;
-    }
-    > .car_th {
-      display: flex;
-      > img {
-        width: 2.2rem;
-        height: 1.3rem;
-        background-color: pink;
+  > .detail_tb {
+    padding: 0.2rem 0.24rem 0 0.24rem;
+    background-color: #eee;
+    > .car_msg {
+      margin-bottom: 0.12rem;
+      > .car_message {
+        height: 2.6rem;
+        padding: 0.3rem 0 0.5rem 0.34rem;
+        border-radius: 0.08rem;
+        box-shadow: 0 4px 2px 2px #e7e7e7;
       }
-      > .car_right {
+    }
+    > .pick_car {
+      // height: 3.25rem;
+      padding: 0.31rem 0.28rem 0.42rem 0.15rem;
+      margin-bottom: 0.05rem;
+      line-height: 0.63rem;
+      font-size: 0.26rem;
+      color: #666;
+      background-color: #fff;
+      border-radius: 0.08rem;
+      box-shadow: 0 5px 2px 1px #e4e4e4;
+      > div {
         display: flex;
-        flex-direction: column;
-        padding: 0.2rem 0 0 0.3rem;
-        > h3 {
-          font-size: 0.34rem;
-          color: #333;
-          font-weight: 600;
+        justify-content: space-between;
+        > p {
+          line-height: 0.63rem;
+          > span {
+            display: flex;
+            flex-direction: column;
+          }
         }
-        > div {
+      }
+    }
+    > .money {
+      line-height: 0.73rem;
+      padding-left: 0.15rem;
+      background-color: #fff;
+      border-radius: 0.08rem;
+      font-size: 0.26rem;
+      font-weight: 600;
+      color: #333;
+      box-shadow: 0 5px 2px 1px #e4e4e4;
+      > span {
+        color: #f0230e;
+      }
+    }
+    > .pay {
+      > .van-cell {
+        padding: 0;
+        padding-top: 0.4rem;
+        padding-right: 0.28rem;
+        font-size: 0.26rem;
+        color: #333;
+        background: #eee;
+        > .van-cell__value {
           display: flex;
           align-items: center;
-          font-size: 0.26rem;
-          color: #999;
-          padding-top: 0.14rem;
-          > .three {
-            width: 0.03rem;
-            height: 0.28rem;
-            margin: 0 0.21rem;
-            background-color: #ddd;
-            border-left: 1px solid #e6e6e6;
-            border-right: 1px solid #e6e6e6;
-          }
-          > .four {
-            width: 0.04rem;
-            height: 0.28rem;
-            margin: 0 0.21rem;
-            background-color: #ddd;
-            border-left: 1px solid #f6f6f6;
-            border-right: 1px solid #f6f6f6;
+          justify-content: space-between;
+          > div {
+            display: flex;
+            align-items: center;
+            > img {
+              margin-right: 0.26rem;
+            }
           }
         }
       }
     }
-  }
-  > .car_time {
-    height: 0.8rem;
-    line-height: 0.8rem;
-    padding-left: 0.38rem;
-    border-bottom: 1px solid #e0e0e0;
-    > span {
-      padding: 0.12rem;
-      color: #333;
-      font-size: 0.28rem;
-    }
-  }
-  > .price {
-    display: flex;
-    padding: 0.28rem 0 0.38rem 0.38rem;
-    font-size: 0.22rem;
-    border-bottom: 1px solid #e0e0e0;
-    ul {
-      flex: 1;
-      li {
-        line-height: 0.48rem;
+    > .agree {
+      padding: 0.37rem 0 0.7rem;
+      i {
+        font-size: 0.22rem;
+        color: #666;
       }
-    }
-  }
-  > .total {
-    color: #333;
-    padding: 0.34rem 0 0 0.38rem;
-    > span {
-      padding-right: 0.08rem;
-      font-size: 0.35rem;
-      font-weight: 600;
+      span {
+        font-size: 0.24rem;
+        color: #4395ff;
+      }
     }
   }
   > .btn {
-    padding: 0.69rem 1.05rem;
-    font-size: 0.28rem;
-    button {
-      width: 2.5rem;
-      height: 0.9rem;
-      background-color: #eee;
-      border: 1px solid #ccc;
-      border-radius: 0.08rem;
-      &:first-child {
-        margin-right: 0.4rem;
-      }
+    > .van-button--large {
+      height: 0.81rem;
+    }
+    span {
+      color: #fff;
+      font-size: 0.28rem;
+      font-weight: 500;
     }
   }
 }

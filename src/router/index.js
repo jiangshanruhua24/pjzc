@@ -44,6 +44,7 @@ const routes = [
       path: '/detail',
       name: 'Detail',
       component: () => import("@/views/detail/Detail")
+
    },
    {
       path: '/evaluate',

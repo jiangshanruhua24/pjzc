@@ -21,7 +21,7 @@ import My_order from "./prochild/My_order";
 /* 设置 */
 import Set from "./prochild/Set";
 /* 订单详情2.0 */
-import Order_details from "@/views/detail/Order_details";
+import Order_details from "./prochild/Order_details";
 export default {
   props: {},
   data() {
