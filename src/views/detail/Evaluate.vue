@@ -10,7 +10,7 @@
     </div>
     <div class="val_text">
       <textarea
-        type="text"
+        v-model="text"
         placeholder="感谢您对平驾的支持，来说说您的评价之旅吧!"
         @input="valClick"
       />
@@ -31,12 +31,12 @@ export default {
     return {
       isText: false,
       color: "#ddd",
+      text: "",
     };
   },
   methods: {
-    valClick(e) {
-      // console.log(e.data);
-      if (e.data!== null) {
+    valClick() {
+      if (this.text) {
         this.color = "#27aafc";
       } else {
         this.color = "#ddd";
