@@ -4,16 +4,17 @@
       <div slot="center">评价</div>
     </NavBar>
     <div class="content">
-      <div>手续办理：<Start /></div>
-      <div>车辆情况：<Start /></div>
+      <div><span> 手续办理：</span><Start /></div>
+      <div><span>车辆情况：</span><Start /></div>
       <div>服务态度：<Start /></div>
     </div>
     <div class="val_text">
       <textarea
         type="text"
         placeholder="感谢您对平驾的支持，来说说您的评价之旅吧!"
+        @input="valClick"
       />
-      <van-button color="#ddd" :disabled="isText" type="primary"
+      <van-button :color="color" :disabled="isText" type="primary"
         >匿名提交</van-button
       >
     </div>
@@ -29,9 +30,19 @@ export default {
   data() {
     return {
       isText: false,
+      color: "#ddd",
     };
   },
-  methods: {},
+  methods: {
+    valClick(e) {
+      // console.log(e.data);
+      if (e.data!== null) {
+        this.color = "#27aafc";
+      } else {
+        this.color = "#ddd";
+      }
+    },
+  },
   components: { NavBar, Start },
 };
 </script>
@@ -39,6 +50,8 @@ export default {
 <style scoped lang="less">
 .evaluate {
   > .content {
+    display: flex;
+    flex-direction: column;
     padding: 0.64rem 0.81rem 0.27rem 0.73rem;
     font-size: 0.3rem;
     box-shadow: #f2f2f2 0 2px 2px 2px inset;
@@ -51,7 +64,9 @@ export default {
     }
   }
   .val_text {
-    padding-left: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     > textarea {
       display: block;
       width: 6.01rem;

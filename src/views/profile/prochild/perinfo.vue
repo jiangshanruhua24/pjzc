@@ -8,7 +8,7 @@
         <span class="text">头像</span>
         <van-image
           round
-          width=".8rem"
+          width="1.3rem"
           height=".8rem"
           src="https://img.yzcdn.cn/vant/cat.jpeg"
         />

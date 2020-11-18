@@ -1,7 +1,7 @@
 <template>
-  <van-rate
+   <van-rate
     v-model="value"
-    :size="54"
+    :size="size"
     color="#ffae3a"
     void-icon="star"
     void-color="#eee"
@@ -16,12 +16,17 @@ export default {
   data() {
     return {
       value: 0,
+      size:'50'
     };
   },
-  methods: {},
-  components: {},
+  mounted(){
+    this.size=window.innerWidth*50/750;
+  }
 };
 </script>
 
 <style scoped lang="less">
+// div.van-rate{
+//   width: 67%;
+// }
 </style>

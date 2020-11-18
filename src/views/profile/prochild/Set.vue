@@ -1,11 +1,14 @@
 <template>
   <div class="set">
+    <NavBar>
+      <div slot="center">设置</div>
+    </NavBar>
     <ul>
-      <li>
+      <li @click="updpass">
         <span>修改密码</span>
         <span>></span>
       </li>
-      <li>
+      <li @click="passback">
         <span>忘记密码</span>
         <span>></span>
       </li>
@@ -18,13 +21,21 @@
 </template>
 
 <script>
+import NavBar from '@/components/common/NavBar'
 export default {
   props: {},
   data() {
     return {};
   },
-  methods: {},
-  components: {},
+  methods: {
+    updpass(){
+      this.$router.push('/updpass');
+    },
+    passback(){
+      this.$router.push('/passback');
+    }
+  },
+  components: {NavBar},
 };
 </script>
 

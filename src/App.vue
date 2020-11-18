@@ -8,4 +8,7 @@
 </script>
 
 <style scoped lang="less">
+#app{
+ 
+}
 </style>

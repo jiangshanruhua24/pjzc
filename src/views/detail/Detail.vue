@@ -58,9 +58,8 @@
       </div>
     </div>
     <div class="btn">
-      <van-button type="primary" size="large" color="#4395ff"
-        ><span>账户余额</span></van-button
-      >
+      <van-button type="primary" size="large" color="#4395ff" @click='orderover'
+        ><span>账户余额</span></van-button>
     </div>
   </div>
 </template>
@@ -78,7 +77,11 @@ export default {
       checked: true,
     };
   },
-  methods: {},
+  methods: {
+    orderover(){
+      this.$router.push('/detailover');
+    }
+  },
   components: { NavBar, CarDetail },
 };
 </script>

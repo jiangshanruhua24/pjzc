@@ -1,6 +1,7 @@
 <template>
   <div class="detail_over">
-    <div class="order_number">
+    <NavBar> <div slot="center">订单详情</div></NavBar>
+    <div class="order_number" @click="ordermessage">
       <span>订单号：{{ message.order_number }}</span>
       <span>下单日期：{{ formatDate }}</span>
     </div>
@@ -89,6 +90,9 @@ export default {
     reserve() {
       this.$router.push("/evaluate");
     },
+    ordermessage(){
+      this.$router.push('/ordermessage');
+    }
   },
   components: {
     NavBar,

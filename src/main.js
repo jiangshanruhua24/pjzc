@@ -25,10 +25,7 @@ Vue.config.productionTip = false
 
 new Vue({
    mounted() {
-      window.onresize = function () {
          obj.setRem();
-      }
-      this.$router.push('/detail');
    },
    router,
    store,
