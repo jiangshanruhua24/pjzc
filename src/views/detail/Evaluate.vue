@@ -36,7 +36,7 @@ export default {
   methods: {
     valClick(e) {
       // console.log(e.data);
-      if (e.data.length > 1) {
+      if (e.data!== null) {
         this.color = "#27aafc";
       } else {
         this.color = "#ddd";
