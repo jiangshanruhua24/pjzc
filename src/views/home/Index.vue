@@ -132,9 +132,12 @@ button.sub{
     background-color: #26a8fc;
     border-radius: .14rem;
     border: none;
+    height: .93rem;
+    font-size: .34rem;
     position: relative;
     top: -0.6rem;
     left: 50%;
+    font-weight: 550;
 }
 }
 </style>
