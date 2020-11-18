@@ -23,8 +23,7 @@
           v-model="value3"
           type="password"
           placeholder="请输入新密码"
-          right-icon="browsing-history-o"
-        />
+          right-icon="browsing-history-o"/>
       </div>
     </div>
     <div class="list">
@@ -34,8 +33,7 @@
           v-model="value4"
           type="password"
           placeholder="再次输入新的密码"
-          right-icon="browsing-history-o"
-        />
+          right-icon="browsing-history-o"/>
       </div>
     </div>
     <van-button class="sub" type="primary">提交</van-button>
@@ -60,6 +58,9 @@ export default {
 </script>
 
 <style scoped lang='less'>
+div.register{
+  height: 100%;
+
 div.list {
   font-size: 0.28rem;
   display: flex;
@@ -89,7 +90,7 @@ div.list {
   }
   div.input2 {
     border: none;
-    width: 5.05rem;
+    width: 5rem;
     button {
       background-color: #f2f2f2;
       color: #999999;
@@ -100,11 +101,12 @@ div.list {
 button.sub {
   color: #999999;
   width: 75%;
-  margin: 0 auto;
+  margin: 1.3rem auto;
   height: 1rem;
   background-color: #f2f2f2;
   border: none;
   margin-left: 50%;
   transform: translate(-50%);
+}
 }
 </style>
